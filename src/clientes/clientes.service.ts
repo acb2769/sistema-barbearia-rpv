@@ -20,10 +20,24 @@ export class ClientesService {
     })
 
   }
-
+/*  findAll() {
+    return this.prisma.empresa.findMany({ orderBy: { nome: `asc` } });
+  }*/
   findAll() {
-
+    return this.prisma.cliente.findMany({ orderBy: { nome: 'asc' } }); 
   }
+/*   async findOne(id: number) {
+    const empresa = await this.prisma.empresa.findUnique({
+      where: { id }
+    })
+
+    if (!empresa) {
+      throw new NotFoundException('Empresa não encontrada')
+    }
+
+    return empresa;
+  }
+  */
 
   findOne(id: number) {
     return `This action returns a #${id} cliente`;
