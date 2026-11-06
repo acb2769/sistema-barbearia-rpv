@@ -26,6 +26,14 @@ export class ClientesService {
   findAll() {
     return this.prisma.cliente.findMany({ orderBy: { nome: 'asc' } }); 
   }
+ 
+  async findOne(id: number) {
+    const clientes = await this.prisma.
+    return `This action returns a #${id} cliente`;
+  }
+ 
+
+
 /*   async findOne(id: number) {
     const empresa = await this.prisma.empresa.findUnique({
       where: { id }
